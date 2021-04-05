@@ -12,18 +12,16 @@ const PHONE_PRICE = 99.99;
 const ACCESSORY_PRICE = 9.99;
 
 var bank_balance = 303.91;
-let amount;
-let purchasing_amount = 0;
+let amount = 0;
 // your code goes here
-    for(amount = 0;  bank_balance > 0;  bank_balance -= amount)
-    {
+    while(amount < bank_balance) {
         amount += PHONE_PRICE;
         if(amount < SPENDING_THRESHOLD) {
             amount += ACCESSORY_PRICE;
-        }  
-        purchasing_amount += amount;
+        }
     }
-    purchasing_amount = purchasing_amount + (purchasing_amount * TAX_RATE) / 100;
-    alert(`Purchase Aount = $${purchasing_amount.toFixed(2)}`);
+    let tax = amount * TAX_RATE;
+    amount = amount + tax;
+    alert(`Purchase Aount = $${amount.toFixed(2)}`);
 
 // ⛑ Answer of the above will `$334.76`.
