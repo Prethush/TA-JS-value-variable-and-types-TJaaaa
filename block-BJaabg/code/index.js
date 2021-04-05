@@ -22,6 +22,11 @@ let amount = 0;
     }
     let tax = amount * TAX_RATE;
     amount = amount + tax;
-    alert(`Purchase Aount = $${amount.toFixed(2)}`);
+    console.log(`Purchase Aount = $${amount.toFixed(2)}`);
+    if(amount > bank_balance) {
+        console.log("You can't afford it");
+    } else {
+        console.log("You can afford it");
+    }
 
 // ⛑ Answer of the above will `$334.76`.
